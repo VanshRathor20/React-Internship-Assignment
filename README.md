@@ -1,73 +1,163 @@
-# React + TypeScript + Vite
+### 🎨 React Internship Assignment – Artwork Data Table
+---
+## 📌 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React + TypeScript application built using Vite. It displays artwork data from the Art Institute of Chicago API using the PrimeReact DataTable component.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+🔗 Live URL: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+The application implements:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Server-side pagination
+- Checkbox-based row selection
+- Select all (current page only)
+- Custom row selection overlay
+- Persistent selection across pages
+- No prefetching or mass data storage
 
-## Expanding the ESLint configuration
+The project strictly follows all assignment constraints.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- Vite
+- PrimeReact
+- Tailwind CSS
+- Axios
+- 
+---
+## 📂 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+├── 📁 api
+│   └── 📄 artworkApi.ts
+├── 📁 assets
+│   └── 🖼️ react.svg
+├── 📁 components
+│   ├── 📄 ArtworkTable.tsx
+│   ├── 📄 CustomSelectionOverlay.tsx
+│   └── 📄 Home.tsx
+├── 📁 types
+│   └── 📄 Artwork.ts
+├── 📄 App.tsx
+├── 🎨 index.css
+└── 📄 main.tsx
+```
+---
+
+### 📦 Folder Explanation
+
+## 📁 api
+
+- Contains API-related logic.
+
+- artworkApi.ts → Handles API requests using Axios.
+
+## 📁 components
+
+Contains UI components.
+
+- ArtworkTable.tsx → Main DataTable implementation.
+
+- CustomSelectionOverlay.tsx → Overlay for selecting N rows.
+
+- Home.tsx → Wrapper or landing component.
+
+## 📁 types
+
+- Contains TypeScript interfaces.
+
+- Artwork.ts → Defines artwork data structure.
+
+## 📄 App.tsx
+
+- Main application container.
+
+## 📄 main.tsx
+
+- Application entry point.
+
+## 🎨 index.css
+
+- Global styles and PrimeReact overrides.
+
+---
+
+### 🔄 Server-Side Pagination
+
+ - Data is fetched per page from:
+```
+https://api.artic.edu/api/v1/artworks?page=1
+```
+- API is called whenever the page changes.
+
+- Only current page data is stored in state.
+
+---
+## ☑️ Row Selection
+
+- Users can select/deselect individual rows.
+
+- "Select All" applies only to the current page.
+
+- Custom overlay allows selecting a specific number of rows.
+
+- Only row IDs are stored using Set<number>
+
+---
+
+## 🔐 Persistent Selection Strategy
+
+- No prefetching of other pages.
+
+- No storing full row objects.
+
+- Only selected row IDs are stored.
+
+- When navigating back to a page, selection is restored by matching row IDs.
+
+- This ensures compliance with assignment rules and prevents memory or performance issues.
+
+---
+
+## 🛠️ Installation & Setup
+
+```
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📤 Deployment
+- Netlify 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✅ Assignment Compliance
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Vite used for project setup
+
+- TypeScript implemented
+
+- PrimeReact DataTable used
+
+- Server-side pagination implemented
+
+- Persistent row selection implemented
+
+- No mass data storage
+
+- No multi-page prefetching
+
+---
+
+## ⭐ Feedback & Contributions
+- If you have suggestions or want to help improve the project
+- feel free to open an issue or submit a pull request!
+
+---
+## 👤 Author
+- Vansh
