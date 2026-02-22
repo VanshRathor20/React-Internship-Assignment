@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* ===== PrimeReact Checkbox Styling ===== */
+
+.p-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.p-checkbox .p-checkbox-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+/* Checked state */
+.p-checkbox .p-checkbox-box.p-highlight {
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+/* Tick icon */
+.p-checkbox .p-checkbox-box.p-highlight .p-checkbox-icon {
+  color: white !important;
+  font-size: 12px;
+}
+
+/* Hover */
+.p-checkbox .p-checkbox-box:hover {
+  border-color: #9ca3af;
+}
+
+/* Remove focus glow */
+.p-checkbox .p-checkbox-box:focus {
+  box-shadow: none !important;
+}
+
+/* ===== Table Styling ===== */
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+  font-size: 14px;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Selected row background */
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+  background-color: #eff6ff !important;
+}
+
+/* ===== Pagination Styling ===== */
+
+.p-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  background: transparent;
+}
+
+.p-paginator .p-paginator-left-content {
+  margin-right: auto;
+}
+
+.p-paginator .p-paginator-pages {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next {
+  min-width: 80px;
+  height: 36px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+/* Hide default icons */
+.p-paginator .p-paginator-prev .p-icon,
+.p-paginator .p-paginator-next .p-icon {
+  display: none;
+}
+
+/* Show text labels */
+.p-paginator .p-paginator-prev::after {
+  content: "Previous";
+}
+
+.p-paginator .p-paginator-next::after {
+  content: "Next";
+}
+
+.p-paginator .p-paginator-prev:hover,
+.p-paginator .p-paginator-next:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  min-width: 36px;
+  height: 36px;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight:hover {
+  background: #1d4ed8;
+}
+
+.p-paginator .p-paginator-prev:disabled,
+.p-paginator .p-paginator-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
